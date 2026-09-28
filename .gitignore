@@ -1,0 +1,26 @@
+.env
+__pycache__
+.venv
+.DS_Store
+# Python environments
+.venv/
+.venv-windows-backup/
+venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python generated files
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+*.tmp
+*.bak
+
+# Local Inspector configuration
+inspector-config.json

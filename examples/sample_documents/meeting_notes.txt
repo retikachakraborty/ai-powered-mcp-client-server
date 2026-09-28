@@ -1,0 +1,32 @@
+Northstar Project Planning Meeting
+Date: 2026-09-18
+Meeting type: Delivery planning
+
+Attendees: Project lead, engineering representative, data steward, operations
+representative. These names are roles only; this is fictional demonstration
+content.
+
+Decisions
+1. The first release will be read-only and will not accept arbitrary uploads.
+2. The data contract review must finish before the pilot starts.
+3. The pilot will use synthetic fixtures and approved non-sensitive exports.
+4. Operations will test the failure notification path before scheduled delivery.
+
+Deadlines
+- Data contract review: 2026-09-25
+- Operator walkthrough: 2026-09-29
+- Read-only pilot start: 2026-10-01
+- Release decision: 2026-10-09
+
+Action items
+- Engineering: document required columns and validation failures by 2026-09-23.
+- Data steward: confirm an owner and backup owner for each input by 2026-09-25.
+- Operations: prepare the rollback checklist by 2026-09-29.
+- Project lead: schedule the release decision meeting for 2026-10-09.
+
+Open questions
+- Which approved export should be the first pilot input?
+- Where should an alert go when ownership is ambiguous?
+- How many successful scheduled reports are required before expansion?
+
+Next meeting: 2026-09-29, operator walkthrough and rollback review.
