@@ -2,6 +2,7 @@ from pathlib import Path
 
 from mcp.server.fastmcp import FastMCP
 from mcp.server.fastmcp.prompts import base
+from mcp.types import ToolAnnotations
 from pydantic import Field
 
 from core.documents import (
@@ -32,7 +33,13 @@ def read_document_content(doc_id: str) -> str:
 
 @mcp.tool(
     name="list_documents",
-    description="List all available documents in the MCP server."
+    description="List all available documents in the MCP server.",
+    annotations=ToolAnnotations(
+        readOnlyHint=True,
+        destructiveHint=False,
+        idempotentHint=True,
+        openWorldHint=False,
+    ),
 )
 def list_documents() -> list[str]:
     """Return supported document filenames."""
@@ -42,6 +49,12 @@ def list_documents() -> list[str]:
 @mcp.tool(
     name="search_documents",
     description="Search all supported documents and return matching filenames and snippets.",
+    annotations=ToolAnnotations(
+        readOnlyHint=True,
+        destructiveHint=False,
+        idempotentHint=True,
+        openWorldHint=False,
+    ),
 )
 def search_docs(
     query: str = Field(description="Case-insensitive text to search for"),
@@ -52,7 +65,13 @@ def search_docs(
 
 @mcp.tool(
     name="read_doc_contents",
-    description="Read the text contents of a document."
+    description="Read the text contents of a document.",
+    annotations=ToolAnnotations(
+        readOnlyHint=True,
+        destructiveHint=False,
+        idempotentHint=True,
+        openWorldHint=False,
+    ),
 )
 def read_document(
     doc_id: str = Field(description="Filename of the document to read")
@@ -62,7 +81,13 @@ def read_document(
 
 @mcp.tool(
     name="edit_document",
-    description="Replace exact text in a TXT or Markdown document."
+    description="Replace exact text in a TXT or Markdown document.",
+    annotations=ToolAnnotations(
+        readOnlyHint=False,
+        destructiveHint=True,
+        idempotentHint=True,
+        openWorldHint=False,
+    ),
 )
 def edit_document(
     doc_id: str = Field(description="Filename of the document to edit"),

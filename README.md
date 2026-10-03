@@ -14,6 +14,9 @@ storage local and supports TXT, Markdown, PDF, and DOCX extraction.
 The document server and the offline test suite do not require a Gemini API
 request.
 
+This project was developed from the Anthropic MCP course and subsequently
+adapted and extended, including the Gemini API integration.
+
 ## Setup
 
 From the project root:
